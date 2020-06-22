@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="ion-text-center">Nhập dữ liệu</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-list>
+    <ion-item>
+      <ion-label position="stacked">Your Name</ion-label>
+      <ion-input [(ngModel)]="user.name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Age</ion-label>
+      <ion-input [(ngModel)]="user.age"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Address</ion-label>
+      <ion-input [(ngModel)]="user.address"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Job</ion-label>
+      <ion-input [(ngModel)]="user.job"></ion-input>
+    </ion-item>
+  </ion-list>
+  <ion-button fill="outline" expand="block" color="success" (click)="add(user)">Push</ion-button>
+  <ion-button fill="outline" expand="block" color="primary" (click)="navigate()">Show database</ion-button>
+</ion-content>
