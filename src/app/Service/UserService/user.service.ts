@@ -11,10 +11,8 @@ export class UserService {
   items: Observable<User[]>;
 
   constructor(public db: AngularFirestore, public afs: AngularFireStorage) {
-    this.items = this.db.collection<User>('users').valueChanges();
+    this.items = this.db.collection<User>('users').valueChanges({ idField: 'id' });
     // this.items = this.db.collection('users').snapshotChanges().map(changes =>{
-    let x = this.db.collection('users').doc().get();
-    console.log(x)
     // })
   }
   addUser(value: User) {
@@ -36,8 +34,8 @@ export class UserService {
   getImg() {
     return this.afs.ref('Image/Thorimg.jpg')
   }
-  deleteUser() {
-
+  deleteUser(userkey) {
+    return this.db.collection('users').doc(userkey).delete();
   }
   updateUser() {
 

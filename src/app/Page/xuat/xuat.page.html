@@ -19,6 +19,9 @@
         <h3>Job : {{item.job}}</h3>
         <p>Address : {{item.address}}</p>
       </ion-label>
+      <ion-buttons>
+        <ion-button color='danger' (click)='delete(item.id)'>Delete User</ion-button>
+      </ion-buttons>
     </ion-item>
   </ion-list>
 </ion-content>
